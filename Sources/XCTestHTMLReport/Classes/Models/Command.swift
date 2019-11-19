@@ -45,7 +45,7 @@ struct Command
                         return false
                     }
 
-                    let value = CommandLine.arguments[valueIndex].replacingOccurrences(of: " ", with: "\ ")
+                    let value = CommandLine.arguments[valueIndex]?.replacingOccurrences(of: " ", with: "\\ ")
                     Logger.error("Updated Argument: \(value)")
                     let result = ValueArgument.validate(value, forType: valueArgument.type)
                     if !result.0 {
