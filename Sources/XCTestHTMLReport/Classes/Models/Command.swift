@@ -45,7 +45,8 @@ struct Command
                         return false
                     }
 
-                    let value = CommandLine.arguments[valueIndex].replacingOccurrences(of: "\\", with: " ")
+                    let value = CommandLine.arguments[valueIndex]
+                    print(CommandLine.arguments)
                     let result = ValueArgument.validate(value, forType: valueArgument.type)
                     if !result.0 {
                         if valueArgument.required {
